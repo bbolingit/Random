@@ -20,9 +20,6 @@ public class NthFibonacci {
 			n = input.nextInt();
 			if(n > 100 || n < 0) throw new InputMismatchException();//Throws an error message when outside valid input bounds
 
-			place = input.nextInt();
-			if(place > 100 || place < 0) throw new InputMismatchException();//Throws an error message when outside valid input bounds
-
 			notAnswered = false;//If not exceptions are thrown, this is excuted to exit loop
 		} catch (InputMismatchException error) {
 			System.out.println("Please input a valid integer");
