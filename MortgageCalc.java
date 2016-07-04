@@ -16,7 +16,7 @@ public class MortgageCalc extends JFrame implements DocumentListener {
   JTextField rate = new JTextField();
   JTextField principle = new JTextField();
   JTextField paymentPeriod = new JTextField();
-  String[] compundLengths = {"Yearly", "Quarterly", "Monthly", "Daily", "Continuously"}
+  String[] compoundLengths = {"Yearly", "Quarterly", "Monthly", "Daily", "Continuously"};
   JComboBox compoundTime = new JComboBox(compoundLengths);
 
   public MortgageCalc() {
@@ -35,12 +35,12 @@ public class MortgageCalc extends JFrame implements DocumentListener {
 	JLabel compoundLabel = new JLabel("Compounding Interval");
 	paymentPeriod.getDocument().addDocumentListener(this);
 	compoundTime.setSelectedIndex(0);
-	JPane pane = new JPane(new GridLayout(0, 2));
+	JPanel pane = new JPanel(new GridLayout(0, 2));
 	pane.add(principleLabel);
 	pane.add(principle);
 	pane.add(rateLabel);
 	pane.add(rate);
-	pane.add(lengthLabel);
+	pane.add(paymentLength);
 	pane.add(paymentPeriod);
 	pane.add(compoundLabel);
 	pane.add(compoundTime);
@@ -77,7 +77,7 @@ public class MortgageCalc extends JFrame implements DocumentListener {
 	else if(compoundType.equals("Daily")) compoundFreq = 365;
 	else if(compoundType.equals("Continuously")) compoundFreq = 1;
 	
-	double monthlyPayment = (principleAmount * rateAmount) / (1 - (1/(Math.pow((1+rateAmount), 
+	double monthlyPayment = (principleAmount * rateAmount) / (1); 
 	payment.setText(Double.toString(monthlyPayment));
   }
 
