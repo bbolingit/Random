@@ -69,7 +69,7 @@ public class MortgageCalc extends JFrame implements DocumentListener {
 	float principleAmount = checkInput(principle, 100000000);
 	float rateAmount = checkInput(rate, 100);
 	float paymentLength = checkInput(paymentPeriod, 1000);
-	String compoundType = compoundTime.getSelectedItem();
+	String compoundType = (String)compoundTime.getSelectedItem();
 	double compoundFreq = 0;
 	if(compoundType.equals("Yearly")) compoundFreq = 1;
 	else if(compoundType.equals("Quarterly")) compoundFreq = 4;
@@ -98,6 +98,7 @@ public class MortgageCalc extends JFrame implements DocumentListener {
 		Border outLine = BorderFactory.createLineBorder(Color.red, 1);
 		givenField.setBorder(outLine);
 	}
+	return 0;
   }
 
   //main method which creates the class and displays it
